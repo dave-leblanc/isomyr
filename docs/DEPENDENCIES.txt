@@ -1,0 +1,13 @@
+============
+Dependencies
+============
+
+Isomyr currently has the following dependencies:
+
+* pygame - http://www.pygame.org/download.shtml
+
+* NumPy - http://www.scipy.org/Download
+
+On Ubuntu, you can do the following:
+
+ $ sudo apt-get install python-pygame python-numpy

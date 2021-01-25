@@ -1,0 +1,449 @@
+2010.09.08
+
+* Fixed old import in engine.
+* Added Ubuntu apt-get install command to DEP file.
+* Fixes for examples.
+* Added a check for inventory items before using an item.
+
+2009.11.02
+
+* Documentation changes from 2009-11-02.
+
+2009.10.31
+
+* Updated Rain and Snow weather types.
+* Added a new exception for dew point errors.
+* Improved string representation of Isomyr errors.
+* Added dew point function.
+
+2009.10.30
+
+* Added more unit tests for custom date time.
+* Reorganized the util subpackage.
+* Added a getOrdinal utility.
+* Reorganized the world/universe modules.
+* Added temperature conversion functions.
+* Added wind chill and heat index functions.
+
+2009.10.29
+
+* Added solar system and star abstraction.
+* Stubbed out a season object.
+* Added a month object for use by the DateTime object for calendar
+customization.
+* Added basic weather types.
+* Stubbed out weather pattern type object and a weather pattern object.
+* Stubbed out a function for procedurally generating temperature values.
+
+2009.10.28
+
+* Updated TODO with save game notes and map creation/editor notes.
+* Added sound explorations to a sandbox directory.
+* Updated TODO with more thoughts about sound and added a section for distance.
+* Added footsteps example.
+* Added sound module.
+* Updated footsteps example to emit sounds.
+
+2009.10.26
+
+* Updated TODO with thoughts about in-game sound.
+* Committed a few simple changes from the other day.
+
+2009.10.20
+
+* Updated TODO.
+
+2009.10.19
+
+* Started adding a clock class that can drive time-based events.
+* Added more example ideas.
+* Updated TODO.
+* Updated DateTime to track seconds for year, month, and day values.
+* Renamed Calendar to DateTime and Clock to Calendar.
+* Added scale discovery method to calendar object.
+* Added event management for time changes and time scale changes.
+* Added stubbed events and subscribers for hour and season changes.
+* Coped some of the two rooms example to a new time example.
+* Added missing unit test subpackage.
+* Renamed example files and added a player skin.
+* Updated example python file.
+* Renamed time module to calendar to avoid Python stdlib name collision.
+* Updated example with time notification.
+* Updated AnimatedSkin.
+* Added animated grandfather clock to example.
+* Renamed setWorld to setStartingWorld.
+* Updated the other two examples with recent API changes.
+
+2009.10.18
+
+* Added time and calendar placeholder classes.
+* Added unit tests for time class.
+* Added time-multiplier constants.
+* Replaced the poorly named time-tracking variables to tick-tracking variable
+names.
+* Renamed Engine.start to Engine.run.
+* Added more game speeds.
+* Added code to Time and Calendar classes.
+* Created stub for engine test file.
+
+2009.10.17
+
+* Moved room change text notifications out of the view and put them in the
+event handler.
+* Added text notification for when using items.
+* Fixed some bad indenting.
+* Added a text object to store textual data for various actions on things.
+* Changed pickUp and drop methods to return the items that are acted upon.
+* Added drop and pickup messages to the respective subscribers.
+* Updated the open ground example with the changes to the engine API.
+* Added a universe subpackage and moved the universe module there.
+* Moved world and scene classes into their own module.
+* Moved universe.Time to engine.GameTime.
+* Added universe subpackage placeholder modules.
+* Moved particle classes into physics module and removed particle module.
+* Renamed FallingThing to FallableThing.
+
+2009.10.16
+
+* Added a class for tailing text in the sandbox.
+* Improved the tailing text class with lines-based data instead of
+string-based.
+* Fixed the justify text method.
+* Removed unused functions.
+* Copied tailing text buffer into gui.textarea.
+* Copied the tailing text sandbox code into new sandbox code for exploring the
+creation of a pygame text area widget.
+* Updated the sandbox code to do scrolling text in a pygame window.
+* Incorporated latest sandbox code into the text area gui component.
+* Removed display setup code from universe (it doesn't belong there, as that's
+an abstraction for in-game elements, and display is out-of-game).
+* Updated view to manage display and the engine to initilize pygame.
+* Added tests for tailing text buffer.
+* Changed the logic in the buffer's justifyText method.
+* Added the ability to include a welcome message.
+
+2009.10.15
+
+* Added TODO thoughts about module organization for the emerging game GUI.
+* Started a section for thoughts on complex interactions.
+* More thoughts.
+* Moved player images of two room example into their own directory.
+* Fixed jerky player animation in two room example and slowed the frame
+sequence down (doubled the elements).
+* Removed player images that are not used.
+* Created gui subpackage.
+* Moved View class to gui.scene.SceneView.
+* Moved title-displaying and inventory-displaying code into their own view
+classes.
+* Created a View class that incorporates all GUI view components.
+* Renamed gui.scene to gui.view.
+* Moved gui view components into their own module.
+* Module import cleanups.
+* More module import cleanups.
+* Set the version number to the right value.
+* Removed empty API doc.
+* Updated dependencies with links.
+* Updated feature history file.
+* Updated installation doc and setup.py.
+* Updated usage file.
+* Added license and manifest files.
+* Added a text area gui component.
+* Added code to the sandbox for figuring out a good model to use in pygame for
+scrolling text.
+
+2009.10.14
+
+* Updated TODO.
+* Update the background tile slicer to add vertical padding to the finished
+slices.
+* Started working on scene transitions for the open ground example.
+* Updated the two-room example to use the renamed portal keyword argument.
+* Fixed directions and destination locations in open ground example.
+* Added launchpad logo resources.
+* Removed titlebar from top-level dir.
+* Added new title bar resources and updated the examples with it.
+* Moved the inventory box over a little bit.
+* Removed unnecessary player method for changing scene.
+* Added an event and a handler for a player using an intory item.
+* Reverted some "cleanups" in the engine imports.
+* Removed old TODO comments.
+* Added events and handlers for picking up and dropping items.
+* Removed old event handlers.
+* Changed divideVectors to use the origial int result (instead of the new float
+result; engine doesn't support floats yet).
+* Renamed player_control to playerControl.
+* Added a unit test for the current transform function.
+* Code clean up and reformatting.
+* Renamed view_draw to viewDraw.
+* Added missing unit test file.
+* Code cleanup.:
+* Updated the sandboxed transform code with a test case, comparing it against
+the currently used transform function's test case.
+* Updated TODO.
+* Added dependencies file.
+* Started replacing vector code with numpy arrays.
+* Updated docstrings and comments.
+* Added thoughts about time, seasons, weather, etc., to the TODO.
+* More thoughts on world simulation and code organization.
+* Added missing resource files.
+* Added missing titlebar image for open ground example.
+
+2009.10.13
+
+* Updated open ground example background slicer to produce a series of images
+from a given background.
+* Added sliced backgrounds.
+* Removed unused file.
+* Renamed variable.
+* Updated the openground example with tile coords and a mapping from one tile
+to another.
+* Added functions for loading scenes and connecting them (the latter is still
+incomplete).
+
+2009.10.12
+
+* Updated TODO.
+* Changed the division vector operation to use floats.
+* Added bugs to the TODO.
+* Added a sandbox directory and some placeholder files.
+* Added more placeholder files to the sandbox.
+* Added sandbox code for a simple isometric transformation.
+* Added sandbox code for a parameterized version of the simple iso transform.
+* Made the sandbox a module so I can import code from other sandbox code.
+* Added sandbox code that renders transforms on a pygame screen.
+* Updated the transform function to return a list, not a numpy matrix.
+* Updated the subscribe docstring.
+* Updated the transformation function to rotate about arbitrary points.
+* Removed duplicate translation matrices and replaced with a translation matrix
+function.
+* Added a floor grid in the sandbox.
+* Started working on a sandbox example that included walls with the room floor.
+
+2009.10.11
+
+* Changed the event.subscribers data structure from a list to a dict of lists.
+* Updated all the event functions to account for the new data structure.
+* Updated the notify method correlate the passed event class and the event
+class that the subscriber is interested in, only notifying upon positive
+correlation.
+* Removed now unneeded event class attribute on subscribers.
+* Added code to the player scene-change subscriber and remove the
+event_change_scene method from the Player object.
+* Updated docstrings.
+* Added an exception for unknown subscribers.
+* Added view updating code to player scene change subscriber.
+* Added a setView method to the scene class.
+* Removed player scene checks from engine loop, now that the event listener for
+the scene changes is in place.
+* Removed a TODO from an inline comment in the source code.
+* Removed TODO items that have been completed.
+* Renamed PlayerSceneChangeEvent to PlayerTouchPortalEvent and
+PlayerSceneChangeSubscriber to PlayerTouchPortalSubscriber.
+* Added an event and handler for player inventory updates.
+* Moved info panel and font code out of engine and into the view object.
+* Updated subscribe to be able to take lists of subscriptions.
+* Tweaked the subscribe function some more.
+* Removed the scene object-passing in the view class.
+* Removed commented out code.
+* Moved event handler registration out of the engine and into the world object.
+* Updated examples.
+* Added universe object and re-worked world and engine objects accordingly.
+* Added a worldFactory function for creating world and its universe in one
+stroke.
+* Renamed world module to universe.
+* Created thing module with Thing and ThingOfThings abstractions in it.
+* Subclassed world and universe from ThingOfThings.
+* Subclassed Physical object from Thing.
+* Cleaned up formatting in suite module.
+* Updated TODO.
+* Removed setup/setUp method.
+* Renamed all positions to locations.
+* Formatted vector module and changed names of functions.
+* Added more unit tests for vector util.
+* Replaced old vector code iterative math with maps.
+* Renamed copyVector to replaceVector.
+* Renamed direction to reverseDirection.
+* Renamed vectorToFace to vectorToDirection.
+* Updated vectorToDirection to operate on more than just unit vectors.
+
+2009.10.10
+
+* Renamed the Simulator class to Responder.
+* Refactored the Engine init method.
+* Added the manually-tweaked background image for the open group example.
+* Added an event subscription/notification system based upon the Zope event
+system.
+* Fixed some typos in the engine code.
+* Tweaked docstrings.
+* Fixed some old code in the view class.
+* Adjusted the player scene-change event to take the portal as an argument
+instead of the next scene.
+* Added an event handler module and moved the IsomyrSubscriber class into it.
+* Added a handler for a player changing scenes.
+* Updated the subscriber base class with an event class attribute that needs to
+be set by all subclasses so that the subscribers are only notified by the event
+with which they are associated.
+
+2009.10.09
+
+* Merged changes of the last few days from various shelved states of code (none
+ever committed).
+* Fixed relationship mixin tests.
+* Branched Isotope trunk to the new Isomyr trunk.
+* Renamed all occurrences of [Ii]sotope to [Ii]somyr.
+* Renamed view methods to use camelCase.
+* Renamed engine's display attribute to view.
+* Cleaned up simulator class variable names.
+* Renamed displayUpdate to updateDisplay.
+* Added lots of code comments in anticipation of refactoring the view code.
+* Moved isometric.view_update code into the view object and refactored the hell
+out of it.
+* Moved updatable object logic to a method on the scene object.
+* Refactored cumbersome view method into several methods.
+
+2009.10.06
+
+* Removed old comment.
+* Changed not-equals to standard idiom.
+* Added mismatch error for when frames per cycle and frame sequence length
+doesn't match.
+* Updated skin image count error.
+* Added more checks when setting the controller and images in a skin.
+* Parameterized velocity magnifier for NPCs.
+* Added globbing support to image loader.
+* Moved all frame data into skin class.
+* Added more checks in directed animated skin.
+* Added large animations for a character (downloaded from
+http://www.inet2inet.com/inetforums/index.php?showtopic=54).
+* Made forced color key in image loader optional.
+* Added small image set for south-facing explorer.
+* Remove old explorer images.
+* Updated TODO.
+* Added east-facing small animations for explorer player.
+* Added velocity modifier to MovableObject.
+* Fixed all the object arguments.
+* Cleaned up some old references to pos.
+* Updated the TODO with ideas for changes to world and the addition of a
+universe.
+* Moved the player factory from the world to the scene.
+* Shuffled velocity magnifiers around.
+* Added setUp method for ease of configuring additional attributes.
+* Moved child/parent methods into a mixin.
+* Removed thing classes.
+* Renamed event_collision to eventCollision and event_touch to eventTouch.
+* Added constants for object sides.
+* Updated the original example to work with the latest API changes.
+* Updated the engine to use the player velocity modifier.
+
+2009.10.05
+
+* Created a script for chopping up a large area into small backgrounds for
+individual scenes.
+* Added a starting point background that was procedurally cut from the full
+background image but whose canvas was manually resized afterwards.
+* Created a new world instance with the background and a walking man.
+* Tweaked the directed animation class to optionally take only 6 images,
+whereupon the other missing 6 would be created as mirror images.
+* Added a new exception.
+* Parameterized frames per cycle for animated walks.
+* Added vector constants for directions.
+* Set attributes on walking actor for directional images.
+* Remove the code that forced a directional jump; in-place jumps are now
+possible.
+* Added a setController method so that skins have direct access to the world
+object they represent.
+* Updated the setSkin method to set the controller as well.
+
+2009.10.04
+
+* Updated the tutorial so that each object that had a skin explicitly sets the
+skin for that object.
+* Removed skin_group from view_update isometric function and thus the
+display_update and redraw_diplay engine functions as well.
+* Removed skin_group reference from draw_info_panel.
+* Removed the rest of the skin_group code.
+* Removed all references to objtype, now that the skin groups has been removed.
+* Added a missing exception.
+* Updated TODO with thoughts about examples to create.
+* Cleaned up and reorganized TODO.
+* Renamed time methods.
+* Renamed physics classes and functions.
+* Reformatted particle module and renamed its classes and methods.
+* Added MovableObject.
+* Split up Actor into Actor and WalkingActor.
+* Juggled object methods around for improved semantics.
+* Renamed Avatar to Player.
+* Renamed Monster to NPC.
+* Created new Monster class with stubbed out respond method that will
+eventually contain logic for attacking.
+* Created a placeholder for the next example.
+
+2009.10.03
+
+* Moved the Keys class into a new config module.
+* Moved Portal object into objects module.
+* Moved actor classes into objects.
+* Renamed scene module to world and created a world object there.
+* Started a test case for Things.
+* Added more methods to the world object for setting and getting scenes.
+* Removed misc patch file.
+* Reformatted sprites.
+* Added addPlayer method to world.
+* Added exceptions module.
+* Replaced the buggy Scene.remove_object with a robust removeObject method.
+* Renamed avatar move method to updatePosition.
+* Renamed tick method to act.
+* Split out gravity action code into fall method.
+* Split walking animation out of act method into its own method.
+* Cleaned up the isometric module.
+* Removed direct access to player from engine (now gets it from world object).
+* Moved time object into world module and instance onto world class.
+* Updated TODO.
+* Cleaned up tutorial a little more.
+* Renamed the new_scene and new_pos variables to current_scene and
+current_position.
+* Removed surface attribute from engine and referenced the world surface
+instead.
+* Removed the surface attribute from the View object.
+* Renamed get_image to getImage and used it in the engine code where images[0]
+was being accessed directly.
+
+2009.10.02
+
+* Lots more cleanup... lost track of it all.
+* Renamed tutorial to examples.
+* Changed the image loader utility function to a class, thus allowing the
+tutorial to be run from the top-level directory.
+* Refactored the tutorial into functions.
+* Moved the vector module into util and started a test module for it.
+* Added a test runner.
+
+2009.10.01
+
+* Started new trunk with version 0.9 if Isotope (2005 release).
+* Added ChangeLog and TODO files.
+* Formatted README.
+* Added admin scripts.
+* Added setup.py and meta.py files.
+* Added a util subpackage.
+* Added a testing subpackage.
+* Added a docs directory and moved the .pdf file there.
+* Added usage, prelude, install docs.
+* Removed old install instructions from README.
+* Updated the doctest admin script.
+* Fixed import in setup.py.
+* Updated TODO.
+* Added a placeholder for the API doc.
+* ReSTified the README.
+* Add a tests subpackage.
+* Renamed misc objects module to particle module and consolidated code from
+special objects module.
+* Renamed isotope.py to engine.py.
+* Moved view and simulator classes out of elements module and into engine.
+* Deleted elements module.
+* Updated the tutorial to use the new module locations.
+* Formatted the tutorial code.
+* Reformatted engine module.
+* Reformatted skin module.
+* Added a new method to the scene object.
+* Reformatted scene module.

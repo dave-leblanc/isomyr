@@ -1,0 +1,329 @@
+==========
+Known Bugs
+==========
+
+* When increasing the player velocity, their jumping height also increases.
+  When it's high enough, the player can jump out of the scene. This may require
+  that ceilings be placed on rooms... but the jumping physics should be
+  examined as well.
+
+
+====
+TODO
+====
+
+Misc
+----
+
+* Add unit tests for world.World.setWorldTime.
+
+* Add unit tests for time change method.
+
+* Add season definitions and season-tracking to Calendar.
+
+* Add a wrapper for managing sprites (related postion vectors, sizing, etc.;
+  see code in isometric.py.
+
+* Add support for ConfigParser engine/game configuration.
+
+* Add a sandbox example for drawing just a wall.
+
+* Add logging for all actions (for easy debugging in the console).
+
+* Provide a configuration mechanism whereby game developers can define a
+  titlebar image.
+
+* Locate all XXX comments, fix them, and remove them.
+
+* Rename all some_thing methods and variables to someThing.
+
+* Add more unit tests.
+
+
+Example Tasks
+-------------
+
+* Create an example where a yogi sits on top of a mountain and seasonal events
+  take place (visual updates to the background images, textual updates to the
+  console).
+
+* Create an example with a time demo where time passes differently in different
+  rooms (doors would be teleports to other worlds with different calendars).
+  (NOTE: this one might not be needed, once the previous two are
+  implemented...)
+
+* Create an example with examinable object (maybe a book is a good demo for
+  this).
+
+* Create an example with explodable objects
+
+* Create an example with procedurally-generated background images/grids/etc.
+
+* Create an example with a "room" that has multiple terrain types; walking over
+  them demostrates the fractional player velocities as determined by the
+  terrain.
+
+
+Docs
+----
+
+* Update the docs with information about the perspective ratio used by Isomyr.
+
+
+DirectedAnimatedSkin
+--------------------
+
+* Split out getImage into separate methods.
+
+* Give a method name for every direction.
+
+
+World Building
+--------------
+
+* For the new Thing objects, make sure that if an object with children is added
+  to a world, that all the children get their world attribute set properly.
+
+* Add support for parsing an ASCII map to generate a room.
+
+* Add support for Tiled maps
+
+  - http://mapeditor.org/
+
+  - http://code.google.com/p/python-pyknic/source/browse/trunk/pyknic/resources/
+
+* Provide default skinning for objects that don't have skins. Maybe just lots
+  of grey with grids on them (spaced to whatever the base unit is for objects).
+
+* Start providing a set of sample objects, pre-skinned, ready to be inserted
+  into games. This should have:
+
+  - a skin
+
+  - size, velocity, weight, and all other attributes pre-defined
+
+  - a sprite factory that would be used by the engine
+
+
+Player Tweaks
+-------------
+
+* When a player picks up an item, that should re-parent the item (new parent =
+  player).
+
+* When a player drops an itme, that should re-parent the item (new parent =
+  scene).
+
+* Changes to scenes, players, etc., should cause a refresh to happen in the
+  scene. The engine shouldn't have to check for individual object changes.
+
+  - add an object history-tracking mechanism
+
+* Player sensation occurs in the engine right now... this is not a good
+  abstraction. Player examination should be an interaction between player and
+  object, within the context of the world (or more practically, within the
+  context of a given scene).
+
+* Add the ability to have various forms of clothing and to be able to swap them
+  out in-game.
+
+
+Engine Improvements
+-------------------
+
+* Engine.start refers to pygame.time.get_ticks -- let's put a wrapper for this
+  in our own gametime instance.
+
+* Define the mathematical relationship between the following:
+
+  - player character size and scene boundaries
+
+  - background size/placement and scene boundaries
+
+* Allow the perspective ratio to be configurable. (prototype in the sandbox)
+
+* Write a floor/grid-generating utility function. (prototype in the sandbox)
+
+  - Allow grid elements to be controlled run-time (e.g., changing tile colors
+    dynamically).
+
+
+Multiple Skin Supprt
+--------------------
+
+* Add support for objects to have differnt skins that would be switched based
+  upon environmental factors (e.g., broken windows, limping players, sitting
+  players).
+
+
+Physics
+-------
+
+* Time
+
+  - worlds need to define degree of axial tilt, length of day, length of year
+
+  - scenes need to indicate location on globe so that daylight hours can be
+    determined; they also need to define seasons, correlate them to the times
+    of the year, indicate starting season (time of year) and starting time of
+    day
+
+* Weather
+
+ - type of atmosphere
+
+ - distance of the sun from the planet
+
+ - worlds need to define an average global temperature
+
+ - based on this, highs and lows need to be calculated for various latitudes
+
+ - similarly for the seasons, with axial tilt taken into consideration
+
+ - weather conditions should be predefined based on latititude, season, global
+   temperature, axial tilt, etc., (as well as allowable transitions from one
+   type of weather to another)
+
+* Planetary bodies
+
+ - type of sun, color of light
+
+ - configurable moon count
+
+ - mass/visibility of moons
+
+ - light level given off by each moon
+
+ - regularity of visible meteor activity
+
+* Movement on world surface
+
+ - worlds need to define mass so that gravity, rate of fall, weights of
+   objects, etc., can be calculated
+
+ - objects also need to indicate their masses
+
+ - visually, movement could take place in outdoor and indoor scenes, but could
+   also take place at a top-down map-level, allowing for an interactive and
+   visual means of traversing great distances
+
+* Add a map-view for traversing long distances (across continents), with moving
+  red dot for player. Traversal across mountains, desert, etc., would be slower
+  than plains or movement on roads.
+
+* Add support for fractional velocities.
+
+  - it seems that this won't be possible with the current isometric transform,
+    as it uses bit-shifting.
+
+* Add gravity multiplier for rate of fall (this goes on world instances).
+
+  - this affects velocity of fall as well as traversal speeds across the
+    surface
+
+  - this affects weight of objects.
+
+* Add terrain traversal modifiers (that augment player velocity)... e.g.,
+  pavement, sand, mud, water.
+
+* Allow players to pull objects.
+
+* Pushing and pulling objects should affect player velocity (depending upon the
+  weight of the object and the surface over which they are being pushed or
+  pulled). This is going to require fractional velocity values.
+
+
+Save Games
+----------
+
+* Store object positions (most importantly, player).
+
+* Store inventory.
+
+* Record game time elapsed.
+
+* Record real-time elapsed.
+
+  - need to support annotating player classes with metadata
+
+
+Mouse Support
+-------------
+
+* Currently, character movement is keys-only. It'd be good to add
+  mouse-directed player movement.
+
+
+Distance
+--------
+
+* Distance in scenes needs to be quantified:
+
+  - sound volumes will depend upon it
+
+  - the amound of ground covered by a walking character will depend upon it
+
+* Distance should be proportional to object sizes
+
+
+Sound and Music
+---------------
+
+* Walking surfaces should have sounds associated with them... probably walkable
+  surfaces should have the ability to define "sound zones" so that adding sound
+  for the following would be possibile:
+
+  - two rooms in a scene, one with a wood floor and and the other carpeted;
+
+  - an out-doors scene with grass, sand, rock, etc., surfaces
+
+  - however... the quality and volume of the sound made while walking is
+    dictated by the walker... so perhaps walkers should have footsteps "skins"
+    for each type of surface they could walk over...
+
+* There should be a "sound generator" object (SoundableThing?) that sets an
+  audibility radius, has an associated sound file (or procedural sound code...
+  maybe a class), there should be an intensity fall-off with distance from
+  source.
+
+  - better than a radius, an object should define an intensity, and the audible
+    radius can be calculated from that
+
+  - perhaps there should be audio "skins" for objects, in the same way that
+    there are image/animation skins... various sound properties could be
+    defined by the skins
+
+  - as an object which is capable of perceiving (e.g., the player, an enemy, an
+    NPC) traverses a scene, all sound-emitting objects need to be iterated
+    through at each step to determine if they are in range of perception, and
+    if so, the level to which the volume should be set for that sound... this
+    is going to depend upon the metric defined for scenes...
+
+* Walls and doors should have sound-dampening characteristics that can be set.
+
+* Ambient sound loops need to be supported, with sound zones like the footsteps
+  example above.
+
+* Similarly, background music needs to be supported.
+
+
+Complex Interactions
+--------------------
+
+* The idea of having weather simulation sparked another idea: events registered
+  for various world or scene changes. For instance, a farmer NPC could
+  subscribe to weather. Weather transitions could call
+  notify(WeatherChange(last, current), and if the transition is defined as
+  harmful to crops (mist->rain is cool, drought->downpour is bad, anything to
+  hail is bad, etc.) then the farmer NPCs could emote dramatically, rush about,
+  leave taverns in a hurry, etc.
+
+
+Networking Support
+------------------
+
+* Support multiple servers for load-balancing purposes.
+
+* Use RabbitMQ for message exchange.
+
+* Use txAMQP for client code.

@@ -1,0 +1,8 @@
+recursive-include docs *.txt
+recursive-include examples *.py *.png *.gif
+recursive-include isomyr *.py
+include ChangeLog
+include README
+include LICENSE
+include TODO
+

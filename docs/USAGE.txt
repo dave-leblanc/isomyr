@@ -1,0 +1,27 @@
+=====
+Usage
+=====
+
+
+Examples
+--------
+
+In the top-level source directory for Isomyr, there is an examples directory.
+This contains the following:
+
+* The original example from Isotope, ported to work with Isomyr. This is a
+  two-room world where a player can pick up two objects and jump on a bed.
+
+* A new open ground example with 14 "rooms" that represent an outside
+  environment.  This example simply shows moving between many connected and
+  unwalled scenes.
+
+Examining each of the Python files in the example directories is the best way
+to get a sense of how to use Isomyr to create a game.
+
+The examples may be run from the top-level source directory, for example::
+
+  $ python examples/TwoRooms/tworooms.py
+
+You may navigate the player with the arrow keys, <SPACE> for jump, and <ENTER>
+for use.

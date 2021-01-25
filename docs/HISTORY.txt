@@ -1,0 +1,53 @@
+=======
+Changes
+=======
+
+Isomyr 0.1 to 0.2
+-----------------
+
+* Started work on a modular GUI layout.
+
+* Added scrolling text area that renders contextual game text and provides an
+  interactive fiction environment for isometric games.
+
+* Added basic world simulation (time, calendar, weather).
+
+
+Isotope 1.0 to Isomyr 0.1
+-------------------------
+
+* Refactored in-game object classes for improved abstraction.
+
+* Added abstraction for universe and world object and refactored relationship
+  between world and scenes.
+
+* Added an event/handler system (based on the Zope 3 event system) for
+  abstracting interactions between objects and their environment.
+
+* Replaced slow vector math with Numpy vector math.
+
+* Refactored GUI code into its own module.
+
+
+Isotope 0.9 to 1.0
+------------------
+
+* Cleaned up code according to Twisted coding standard (augmented PEP-8
+  compliance); removed unused and redundant code.
+
+* Refactored skinning code to improve the game-creation workflow.
+
+* Added abstraction for world object and refactored game component
+  relationships (e.g., player to environment).
+
+* Improved object velocity implementation.
+
+* Started adding unit tests.
+
+* Added an "open ground" example game.
+
+
+Isotope prior to 1.0
+---------------------
+
+* Unknown.
